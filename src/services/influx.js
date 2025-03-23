@@ -8,15 +8,14 @@ const bucket = import.meta.env.VITE_INFLUX_BUCKET
 const influxDB = new InfluxDB({ url, token })
 const queryClient = influxDB.getQueryApi(org)
 
-export const fetchWeatherData = async () => {
+export const fetchClimateData = async (location) => {
   const query = `
     from(bucket: "${bucket}")
       |> range(start: -7d)
       |> filter(fn: (r) => r._measurement == "CLIMA_GT")
+      |> filter(fn: (r) => r.LOCATION == "${location}")
   `
-
   const data = []
-
   return new Promise((resolve, reject) => {
     queryClient.queryRows(query, {
       next(row, tableMeta) {
@@ -30,6 +29,25 @@ export const fetchWeatherData = async () => {
         resolve(data)
       }
     })
+  }).then(rawData => {
+    const numericFields = [
+      'TEMPC','TEMP_MINC','TEMP_MAXC','WINDDIRECTION','WINDSPEED','HUMIDITY','PRESSURE','CLOUDS'
+    ]
+    const dataMap = {}
+    rawData.forEach(row => {
+      if (numericFields.includes(row._field)) {
+        row._value = parseFloat(row._value || '0')
+      }
+      const t = row._time
+      if (!dataMap[t]) {
+        dataMap[t] = { time: t }
+      }
+      dataMap[t][row._field] = row._value
+    })
+    const finalData = Object.values(dataMap).sort(
+      (a, b) => new Date(a.time) - new Date(b.time)
+    )
+    return finalData
   })
 }
 

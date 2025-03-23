@@ -1,0 +1,90 @@
+/* src/styles/global.css */
+
+/* Variables de color basadas en tus requerimientos */
+:root {
+    --color-bleachedSilk: #F3F3F2;
+    --color-catsCream: #E7E7E3;
+    --color-busyBee: #F4FF00;
+    --color-springGreen: #00FF7C;
+    --color-victoriaPeak: #007755;
+    --color-fenceGreen: #09332C;
+  }
+  
+  /* Body base */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bleachedSilk);
+    color: #000;
+  }
+  
+  /* Contenedor principal de la app */
+  .app-container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Clases para secciones o componentes */
+  .component-box {
+    background-color: var(--color-catsCream);
+    border: 2px solid var(--color-victoriaPeak);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+  
+  /* Titulos y subtitulos */
+  .section-title {
+    margin: 0 0 0.5rem;
+  }
+  
+  /* Ejemplo de clase para un label + select en línea */
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  select {
+    padding: 0.3rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Ajusta gráficas responsivas */
+  .chart-container {
+    overflow-x: auto;
+  }
+  .wind-indicator-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .wind-arrow {
+    width: 2px;
+    height: 40px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+  }
+  
+  .wind-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  .day-progress-bar {
+    background-color: #ccc;
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+  .day-progress-fill {
+    background-color: var(--color-springGreen);
+    height: 8px;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
