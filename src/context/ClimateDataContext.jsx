@@ -30,6 +30,12 @@ export const ClimateDataProvider = ({ children }) => {
       setClimateData(data)
     }
     getData()
+
+    const interval = setInterval(() => {
+      getData()
+    }, 15000)
+
+    return () => clearInterval(interval)
   }, [selectedLocation])
 
   const value = {
