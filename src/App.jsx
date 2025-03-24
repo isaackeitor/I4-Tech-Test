@@ -16,12 +16,14 @@ const App = () => {
       <h1 className="section-title">Dashboard Climático - {selectedLocation}</h1>
       
       <LocationSelector />
-      <WeatherSummary />
+      <div className="top-bar">
+        <WeatherSummary />
+        <WindIndicator />
+        <SunriseSunset />
+      </div>
       <TemperatureChart />
       <HumidityPressureChart />
       <CloudsChart />
-      <WindIndicator />
-      <SunriseSunset />
     </div>
   )
 }

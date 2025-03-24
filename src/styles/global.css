@@ -1,45 +1,44 @@
-/* src/styles/global.css */
-
-/* Variables de color basadas en tus requerimientos */
 :root {
-    --color-bleachedSilk: #F3F3F2;
-    --color-catsCream: #E7E7E3;
-    --color-busyBee: #F4FF00;
-    --color-springGreen: #00FF7C;
-    --color-victoriaPeak: #007755;
-    --color-fenceGreen: #09332C;
+    --color-bleachedSilk: #fef9f3;
+    --color-catsCream: #f7f2e9;
+    --color-busyBee: #FFC107;
+    --color-springGreen: #2ecc71;
+    --color-victoriaPeak: #34495e;
+    --color-fenceGreen: #16a085;
   }
   
-  /* Body base */
+
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--color-bleachedSilk);
+    background: linear-gradient(135deg, var(--color-bleachedSilk), var(--color-catsCream));
     color: #000;
   }
   
-  /* Contenedor principal de la app */
+
   .app-container {
     padding: 1rem;
     max-width: 1200px;
     margin: 0 auto;
   }
   
-  /* Clases para secciones o componentes */
+
   .component-box {
     background-color: var(--color-catsCream);
     border: 2px solid var(--color-victoriaPeak);
     padding: 1rem;
     margin-bottom: 1rem;
-    border-radius: 4px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
-  /* Titulos y subtitulos */
   .section-title {
     margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: var(--color-victoriaPeak);
   }
   
-  /* Ejemplo de clase para un label + select en línea */
+
   .form-group {
     display: flex;
     align-items: center;
@@ -53,7 +52,7 @@
     border: 1px solid #ccc;
   }
   
-  /* Ajusta gráficas responsivas */
+
   .chart-container {
     overflow-x: auto;
   }
@@ -66,7 +65,7 @@
   .wind-arrow {
     width: 2px;
     height: 40px;
-    background-color: #333;
+    background-color: var(--color-victoriaPeak);
     transition: transform 0.3s ease;
   }
   
@@ -83,8 +82,89 @@
     margin-top: 0.5rem;
   }
   .day-progress-fill {
-    background-color: var(--color-springGreen);
+    background-color: var(--color-busyBee);
     height: 8px;
     border-radius: 4px;
     transition: width 0.3s ease;
   }
+
+  .chart-axis-tick {
+    font-size: 0.7rem;
+  }
+  .chart-axis-tick-vertical {
+    transform: rotate(-90deg);
+    text-anchor: end; 
+  }
+  .day-progress-circle {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-top: 1rem;
+  }
+  .day-progress-circle svg {
+    width: 100%;
+    height: 100%;
+  }
+  .day-progress-circle text {
+    font-size: 0.8rem;
+    fill: var(--color-victoriaPeak);
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+
+  .top-bar {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+.sunrise-sunset-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+
+.sunset-info {
+  flex: 1;
+  min-width: 120px;
+}
+
+
+.day-progress-circle {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.day-progress-circle svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+.progress-bg {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 4;
+}
+
+
+.progress-ring {
+  fill: none;
+  stroke: var(--color-busyBee); 
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+
+.progress-text {
+  font-size: 8px;
+  fill: var(--color-victoriaPeak);
+}
