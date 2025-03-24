@@ -5,6 +5,36 @@
     --color-springGreen: #2ecc71;
     --color-victoriaPeak: #34495e;
     --color-fenceGreen: #16a085;
+  
+  --toastify-color-light: var(--color-catsCream);
+  --toastify-color-dark: var(--color-victoriaPeak);
+  --toastify-color-info: var(--color-fenceGreen);
+  --toastify-color-success: var(--color-springGreen);
+  --toastify-color-warning: var(--color-busyBee);
+  --toastify-color-error: #e74c3c;
+  --toastify-color-transparent: rgba(247, 242, 233, 0.7);
+  
+  --toastify-icon-color-info: var(--color-fenceGreen);
+  --toastify-icon-color-success: var(--color-springGreen);
+  --toastify-icon-color-warning: var(--color-busyBee);
+  --toastify-icon-color-error: #e74c3c;
+  
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: var(--color-catsCream);
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-bd-radius: 8px;
+  --toastify-toast-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  --toastify-font-family: Arial, sans-serif;
+  
+  --toastify-text-color-light: var(--color-victoriaPeak);
+  --toastify-text-color-dark: var(--color-bleachedSilk);
+
+  --toastify-color-progress-light: var(--color-busyBee);
+  --toastify-color-progress-dark: var(--color-busyBee);
+  --toastify-color-progress-info: var(--color-fenceGreen);
+  --toastify-color-progress-success: var(--color-springGreen);
+  --toastify-color-progress-warning: var(--color-busyBee);
+  --toastify-color-progress-error: #e74c3c;
   }
   
 
@@ -179,4 +209,17 @@
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 9999;
+}
+
+.Toastify__toast {
+  border: 2px solid var(--color-victoriaPeak);
+}
+
+.Toastify__close-button {
+  color: var(--color-victoriaPeak);
+}
+
+.Toastify__toast-body {
+  font-family: Arial, sans-serif;
+  color: var(--color-victoriaPeak);
 }
